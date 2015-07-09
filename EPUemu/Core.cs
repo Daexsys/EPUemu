@@ -21,6 +21,17 @@ namespace EPUemu
             this.registerFile = new RegisterFile();
         }
 
+        public byte[] getCache(Cache cache)
+        {
+            if (cache == Cache.Code)
+                return this.codeCache;
+            else if (cache == Cache.Data)
+                return this.dataCache;
+            else if (cache == Cache.Stack)
+                return this.stackCache;
+            else return null;
+        }
+
         public byte readCache(Cache cache, ushort address)
         {
             if (address >= 8192)

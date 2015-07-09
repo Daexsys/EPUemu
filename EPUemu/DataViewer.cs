@@ -313,7 +313,7 @@ namespace EPUemu
         /// <param name="e"></param>
         private void button_export_Click(object sender, EventArgs e)
         {
-            new ExportDialog(this.core.dataCache).ShowDialog();
+            new ExportDialog(this.core.getCache(this.cache)).ShowDialog();
         }
 
         /// <summary>
@@ -323,7 +323,7 @@ namespace EPUemu
         /// <param name="e"></param>
         private void button_import_Click(object sender, EventArgs e)
         {
-            //
+            new ImportDialog(this.core.getCache(this.cache)).ShowDialog();
         }
     }
 }
